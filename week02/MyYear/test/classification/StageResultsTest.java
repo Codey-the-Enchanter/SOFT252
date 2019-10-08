@@ -17,6 +17,9 @@ import static org.junit.Assert.*;
  * @author mburren
  */
 public class StageResultsTest {
+    private StageResults empty;
+    private StageResults full;
+    private StageResults halfFull;
     
     public StageResultsTest() {
     }
@@ -31,6 +34,13 @@ public class StageResultsTest {
     
     @Before
     public void setUp() {
+        empty = new StageResults();
+        
+        full = new StageResults();
+        full.addModuleMark(120, 50.0);
+        
+        halfFull = new StageResults(); 
+        halfFull.addModuleMark(60, 50.0); 
     }
     
     @After
@@ -55,12 +65,30 @@ public class StageResultsTest {
 
     @Test
     public void testIsComplete() {
-        fail("test is not yet implemented");
+        System.out.println("testing IsComplete");
+        
+        assertFalse("Empty object", empty.isComplete());
+        assertTrue("Full object", full.isComplete());
+        assertFalse("Half full object", halfFull.isComplete());
     }
 
     @Test
     public void testResetValues() {
-        fail("test is not yet implemented");
+         System.out.println("Testing resetValues");
+
+        // Set the state of the 'full' object to zeroes
+        full.resetValues();
+
+        // Set expected results
+        int expIntResult = 0;
+        double expDoubleResult = 0.0;
+
+        // Now check each attribute to test that the reset has worked
+        assertEquals("credits", expIntResult, full.getTotalCredits());
+        assertEquals("total", expDoubleResult, full.getTotalMarks(), 0.0);
+
+        // Put the 'full' object back to its original state
+        full.addModuleMark(120, 50.0); 
     }
 
     @Test
