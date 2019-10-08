@@ -74,7 +74,7 @@ public class StageResultsTest {
 
     @Test
     public void testResetValues() {
-         System.out.println("Testing resetValues");
+        System.out.println("Testing resetValues");
 
         // Set the state of the 'full' object to zeroes
         full.resetValues();
@@ -93,7 +93,15 @@ public class StageResultsTest {
 
     @Test
     public void testAddModuleMark() {
-        fail("test is not yet implemented");
+        System.out.println("Testing addModuleMark");
+        
+        empty.addModuleMark(20, 40);
+        
+        assertEquals("credits", 20.0, empty.getTotalCredits(), 0.0);
+        
+        assertEquals("marks", 80, empty.getTotalMarks(), 0.0);
+        
+        empty.resetValues();
     }
 
     @Test
