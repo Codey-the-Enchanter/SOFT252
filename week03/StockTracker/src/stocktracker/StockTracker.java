@@ -5,6 +5,8 @@
  */
 package stocktracker;
 
+import stocktracker.stockdatamodel.*;
+
 /**
  *
  * @author mburren
@@ -15,7 +17,20 @@ public class StockTracker {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        PhysicalStockItem objPhysicalItem = 
+                new PhysicalStockItem("Snuff: A Diskworld book by Terry Pratchet", 100);
+        ServiceStockItem objVirtualItem = 
+                new ServiceStockItem("Wintersmith: A Diskworld eBook by Terry Pratchet");
+        
+        String strMessage = objPhysicalItem.getName()
+                + ", Is in stock = " + objPhysicalItem.isInStock()
+                + ", Qty in stock: " + objPhysicalItem.getQuantityInStock();
+        System.out.println(strMessage);
+        
+        strMessage = objVirtualItem.getName()
+                + ", Is in stock = " + objVirtualItem.isInStock()
+                + ", Qty in stock: " + objVirtualItem.getQuantityInStock();
+        System.out.println(strMessage);
     }
     
 }
