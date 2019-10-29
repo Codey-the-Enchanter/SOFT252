@@ -10,5 +10,7 @@ package stocktracker.stockdatamodel;
  * @author mburren
  */
 public enum StockType {
+    PHYSICALITEM,
+    SERVICEITEM;
     
 }
