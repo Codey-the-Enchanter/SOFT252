@@ -10,5 +10,10 @@ package pubsimulation;
  * @author mburren
  */
 public class Landlord {
+    private Drink drink;
     
+    public Landlord() {
+        drink = new Tea();
+        drink.ServeDrink();
+    }
 }
