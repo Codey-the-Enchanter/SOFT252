@@ -11,7 +11,8 @@ package pubsimulation;
  */
 public abstract class ExoticDrink implements Drink{
     
-    public void ServeDrink(){
+    @Override
+    public final void ServeDrink(){
         System.out.println("Add ice");
         
         Spirit();

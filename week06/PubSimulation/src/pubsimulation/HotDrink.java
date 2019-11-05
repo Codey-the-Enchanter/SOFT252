@@ -12,7 +12,7 @@ package pubsimulation;
 public abstract class HotDrink implements Drink{
     
     @Override
-    public void ServeDrink(){
+    public final void ServeDrink(){
         System.out.println("Boil water");
         
         Brew();

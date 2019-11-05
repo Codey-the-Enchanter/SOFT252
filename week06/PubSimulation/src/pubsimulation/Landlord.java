@@ -9,14 +9,6 @@ package pubsimulation;
  *
  * @author mburren
  */
-public abstract class ColdDrink implements Drink{
+public class Landlord {
     
-    @Override
-    public final void ServeDrink(){
-        PrepDrink();
-        
-        System.out.println("Pour into glass");
-    }
-    
-    protected abstract void PrepDrink();
 }
